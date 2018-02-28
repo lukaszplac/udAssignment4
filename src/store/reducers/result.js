@@ -1,4 +1,4 @@
-import * as actionTypes from '../actions';
+import * as actionTypes from '../actions/actions';
 
 const initialState = {
 	results: []
@@ -6,14 +6,14 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
 	switch(action.type) {
-		case actionTypes.STORE : 
+		case actionTypes.STORE_RESULT : 
 			return {
 				...state,
 				results: state.results.concat({id: new Date(), 
 											   value: action.result})
 				//concat w przeciwienstwie do push zwraca nowa tablice !!!
 			};
-		case actionTypes.DELETE :
+		case actionTypes.DELETE_RESULT :
 			// 1 sposob, splice nie zwraca nowej tablicy wiec trzeba zrobic kopie
 			// conts newArray = [...state.results];
 			// newArray.splice(id, 1);
