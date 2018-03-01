@@ -10,8 +10,8 @@ export const saveResult = res => {
 export const storeResult = (result) => {
 	return (dispatch, getState) => {
 		setTimeout(() => {
-			const resultsBefore = getState().res.results;
-			console.log('Before:', resultsBefore);
+			// const resultsBefore = getState().res.results;
+			// console.log('Before:', resultsBefore);
 			dispatch(saveResult(result));
 		}, 2000)
 	}
